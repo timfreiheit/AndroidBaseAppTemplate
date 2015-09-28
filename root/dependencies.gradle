@@ -78,7 +78,7 @@ ext {
     ]
 
     pathToJars = [
-            hockey:         "../adviqoframework/libs/HockeySDK-3.0.2.jar",
+
     ]
 
     libs = [
