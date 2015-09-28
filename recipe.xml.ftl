@@ -3,8 +3,10 @@
 
 
     <copy from="global.gitignore" to="${escapeXmlAttribute(topOut)}/.gitignore" />
+
     <instantiate from="build-global.gradle.ftl" to="${escapeXmlAttribute(topOut)}/build.gradle" />
     <instantiate from="build.gradle.ftl" to="${escapeXmlAttribute(projectOut)}/build.gradle" />
+    <instantiate from="dependencies.gradle" to="${escapeXmlAttribute(topOut)}/dependencies.gradle" />
 	
     <copy from="debug.keystore" to="${escapeXmlAttribute(projectOut)}/debug.keystore" />
 	
