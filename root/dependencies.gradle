@@ -38,25 +38,14 @@
      compile androidlibs.supportV13
      compile androidlibs.supportV4
 
-     apt libs.apt_autoparcel
+     compile libs.parse
+     
+    
      apt libs.apt_dagger2
-     compile libs.butterknife
      compile libs.dagger2
  }
 
  ******/
-/** Example top-level build.gradle
- apply from: 'dependencies.gradle'
- buildscript {
-     repositories {
-        jcenter()
-     }
-     dependencies {
-        classpath buildscriptoptions.android
-        classpath buildscriptoptions.apt
-     }
- }
- ****/
 
 
 ext {
