@@ -1,10 +1,14 @@
+apply from: '../dependencies.gradle'
+
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.android.databinding'
+
 
 android {
 
-   compileSdkVersion 23
-   buildToolsVersion "23.0.1"
+    compileSdkVersion androidoptions.compileSdkVersion
+    buildToolsVersion androidoptions.buildToolsVersion
 
 	defaultConfig {
 		applicationId "${packageName}"
@@ -57,27 +61,27 @@ android {
 
 dependencies {
 
-	compile 'com.android.support:support-v4:23.0.1'
-	compile 'com.android.support:appcompat-v7:23.0.1'
+    compile androidlibs.appcompatV7
+    compile androidlibs.supportV4
    
 	// https://github.com/timfreiheit/HockeyLogReportingHelper
-    compile 'de.timfreiheit:hockey.log:0.4'
+    compile libs.hockeylog
 	
 	// https://github.com/bitstadium/HockeySDK-Android
-	compile 'net.hockeyapp.android:HockeySDK:3.6.0-b.1'
+	compile libs.hockey
 	
     // https://github.com/SalomonBrys/ANR-WatchDog
-    compile 'com.github.anrwatchdog:anrwatchdog:1.1.1'
+    compile libs.anrwatchdog
   
 	// https://github.com/JakeWharton/butterknife
-	compile 'com.jakewharton:butterknife:7.0.1'
+	compile libs.butterknife
    
 <#if includeRetrofit>
 	// https://github.com/square/okhttp
-	compile 'com.squareup.okhttp:okhttp:2.4.0'
+	compile libs.okhttp
    
 	// https://github.com/square/retrofit
-	compile 'com.squareup.retrofit:retrofit:1.9.0'
+	compile libs.retrofit
 </#if>
   
 }
