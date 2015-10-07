@@ -33,20 +33,20 @@ android {
 		debug {
             debuggable true
 			applicationIdSuffix ".debug"
-            buildConfigField "String", "HOCKEY_APP_ID", ""
+            buildConfigField "String", "HOCKEY_APP_ID", "\"\""
 		}
 		
 		alpha {
             initWith(buildTypes.debug)
             applicationIdSuffix ".alpha"
-            buildConfigField "String", "HOCKEY_APP_ID", ""
+            buildConfigField "String", "HOCKEY_APP_ID", "\"\""
         }
 		
 		
 		beta {
             initWith(buildTypes.debug)
             applicationIdSuffix ".beta"
-            buildConfigField "String", "HOCKEY_APP_ID", ""
+            buildConfigField "String", "HOCKEY_APP_ID", "\"\""
         }
 		
 		release {
