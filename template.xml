@@ -66,6 +66,13 @@
         default="true"
         help="Implements all references for using Retrofit." />
 		
+    <parameter
+        id="includeRetrolambda"
+        name="Include Retrolambda"
+        type="boolean"
+        default="true"
+        help="Implements all references for using Retrolambda." />
+
 	<!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>
         <!-- default thumbnail is required -->

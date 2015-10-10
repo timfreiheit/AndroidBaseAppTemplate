@@ -3,6 +3,9 @@ apply from: '../dependencies.gradle'
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.android.databinding'
+<#if includeRetrolambda>
+apply plugin: 'me.tatarka.retrolambda'
+</#if>
 
 
 android {
@@ -23,10 +26,19 @@ android {
         }
     }
    
+
+<#if includeRetrolambda>
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+	}
+</#if>
+<#if !includeRetrolambda>
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
 	}
+</#if>
 
 	buildTypes {
 		
