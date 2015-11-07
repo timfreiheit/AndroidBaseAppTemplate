@@ -2,11 +2,11 @@
 <recipe>
 
 
-    <copy from="global.gitignore" to="${escapeXmlAttribute(topOut)}/_.gitignore" />
+    <copy from="global.gitignore" to="${escapeXmlAttribute(topOut)}/REPLACE_.gitignore" />
 
-    <instantiate from="build-global.gradle.ftl" to="${escapeXmlAttribute(topOut)}/_build.gradle" />
-    <instantiate from="build.gradle.ftl" to="${escapeXmlAttribute(projectOut)}/_build.gradle" />
-    <instantiate from="AndroidManifest.xml.ftl" to="${escapeXmlAttribute(manifestOut)}/_AndroidManifest.xml" />
+    <instantiate from="build-global.gradle.ftl" to="${escapeXmlAttribute(topOut)}/REPLACE_build.gradle" />
+    <instantiate from="build.gradle.ftl" to="${escapeXmlAttribute(projectOut)}/REPLACE_build.gradle" />
+    <instantiate from="AndroidManifest.xml.ftl" to="${escapeXmlAttribute(manifestOut)}/REPLACE_AndroidManifest.xml" />
 	
     <copy from="debug.keystore" to="${escapeXmlAttribute(projectOut)}/debug.keystore" />
 	
