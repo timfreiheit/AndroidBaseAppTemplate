@@ -25,9 +25,12 @@ public class App extends Application {
 	public void onCreate() {
 		super.onCreate();
 		INSTANCE = this;
+<#if includeHockeyApp>
 		initHockeyApp();
+</#if>
 	}
 	
+<#if includeHockeyApp>
 	protected void initHockeyApp() {
 		
 		if(TextUtils.isEmpty(BuildConfig.HOCKEY_APP_ID)){
@@ -64,5 +67,6 @@ public class App extends Application {
             }
         }).start();
     }
+</#if>
 	
 }

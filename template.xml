@@ -60,6 +60,13 @@
         default="com.mycompany.myapp" />
 
     <parameter
+        id="includeHockeyApp"
+        name="Include HockeyApp"
+        type="boolean"
+        default="true"
+        help="Implements all references for using HockeyApp." />
+        
+    <parameter
         id="includeRetrofit"
         name="Include Retrofit"
         type="boolean"
