@@ -4,6 +4,7 @@ import android.app.Application;
 import android.os.Debug;
 import android.text.TextUtils;
 
+<#if includeHockeyApp>
 import com.github.anrwatchdog.ANRError;
 import com.github.anrwatchdog.ANRWatchDog;
 
@@ -12,6 +13,7 @@ import ${packageName}.ui.${activityClass};
 import de.timfreiheit.hockey.utils.HockeyLifecycleConfig;
 import de.timfreiheit.hockey.utils.HockeyLifecycleHelper;
 import de.timfreiheit.hockey.utils.WarningExceptionHandler;
+</#if>
 
 public class App extends Application {
 

@@ -43,20 +43,26 @@ android {
 		debug {
             debuggable true
 			applicationIdSuffix ".debug"
+<#if includeHockeyApp>
             buildConfigField "String", "HOCKEY_APP_ID", "\"\""
+</#if>
 		}
 		
 		alpha {
             initWith(buildTypes.debug)
             applicationIdSuffix ".alpha"
+<#if includeHockeyApp>
             buildConfigField "String", "HOCKEY_APP_ID", "\"\""
+</#if>
         }
 		
 		
 		beta {
             initWith(buildTypes.debug)
             applicationIdSuffix ".beta"
+<#if includeHockeyApp>
             buildConfigField "String", "HOCKEY_APP_ID", "\"\""
+</#if>
         }
 		
 		release {
@@ -64,7 +70,9 @@ android {
 			minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 			
+<#if includeHockeyApp>
             // buildConfigField "String", "HOCKEY_APP_ID", "null"
+</#if>
 		}
 	}
 }
