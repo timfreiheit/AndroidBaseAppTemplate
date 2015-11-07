@@ -2,15 +2,14 @@
 <recipe>
 
 
-    <copy from="global.gitignore" to="${escapeXmlAttribute(topOut)}/.gitignore" />
+    <copy from="global.gitignore" to="${escapeXmlAttribute(topOut)}/_.gitignore" />
 
-    <instantiate from="build-global.gradle.ftl" to="${escapeXmlAttribute(topOut)}/build.gradle" />
-    <instantiate from="build.gradle.ftl" to="${escapeXmlAttribute(projectOut)}/build.gradle" />
-    <instantiate from="dependencies.gradle" to="${escapeXmlAttribute(topOut)}/dependencies.gradle" />
+    <instantiate from="build-global.gradle.ftl" to="${escapeXmlAttribute(topOut)}/_build.gradle" />
+    <instantiate from="build.gradle.ftl" to="${escapeXmlAttribute(projectOut)}/_build.gradle" />
+    <instantiate from="AndroidManifest.xml.ftl" to="${escapeXmlAttribute(manifestOut)}/_AndroidManifest.xml" />
 	
     <copy from="debug.keystore" to="${escapeXmlAttribute(projectOut)}/debug.keystore" />
 	
-    <instantiate from="AndroidManifest.xml.ftl" to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
     <merge from="res/values/strings.xml.ftl" to="${escapeXmlAttribute(resOut)}/values/strings.xml" />
     <instantiate from="res/values/styles.xml.ftl" to="${escapeXmlAttribute(resOut)}/values/styles.xml" />
     <instantiate from="res/values/dimens.xml.ftl" to="${escapeXmlAttribute(resOut)}/values/dimens.xml" />

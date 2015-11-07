@@ -1,5 +1,3 @@
-apply from: '../dependencies.gradle'
-
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.android.databinding'
@@ -10,8 +8,8 @@ apply plugin: 'me.tatarka.retrolambda'
 
 android {
 
-    compileSdkVersion androidoptions.compileSdkVersion
-    buildToolsVersion androidoptions.buildToolsVersion
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
 
 	defaultConfig {
 		applicationId "${packageName}"
@@ -66,34 +64,36 @@ android {
 			minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 			
-            // buildConfigField "String", "HOCKEY_APP_ID", ""
+            // buildConfigField "String", "HOCKEY_APP_ID", "null"
 		}
 	}
 }
 
 dependencies {
 
-    compile androidlibs.appcompatV7
-    compile androidlibs.supportV4
-   
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:support-v4:23.1.0'
+
+<#if includeHockeyApp>
 	// https://github.com/timfreiheit/HockeyLogReportingHelper
-    compile libs.hockeylog
+	compile 'com.github.timfreiheit:HockeyLogReportingHelper:v0.4'
 	
 	// https://github.com/bitstadium/HockeySDK-Android
-	compile libs.hockey
-	
+    compile 'net.hockeyapp.android:HockeySDK:3.6.2'
+
     // https://github.com/SalomonBrys/ANR-WatchDog
-    compile libs.anrwatchdog
+    compile 'com.github.anrwatchdog:anrwatchdog:1.1.1'
+</#if>
   
 	// https://github.com/JakeWharton/butterknife
-	compile libs.butterknife
+	compile 'com.jakewharton:butterknife:7.0.1'
    
 <#if includeRetrofit>
 	// https://github.com/square/okhttp
-	compile libs.okhttp
+	compile 'com.squareup.okhttp:okhttp:2.5.0'
    
 	// https://github.com/square/retrofit
-	compile libs.retrofit
+	compile 'com.squareup.retrofit:retrofit:1.9.0'
 </#if>
   
 }
