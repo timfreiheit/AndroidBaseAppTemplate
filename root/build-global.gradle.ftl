@@ -17,15 +17,8 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'http://dl.bintray.com/populov/maven' }
         jcenter()
-		maven {
-            name "smfhq-third-party"
-            url "http://nexus.smfhq.com/content/repositories/thirdparty/"
-            credentials {
-                username smfhqNexusUser
-                password smfhqNexusPassword
-            }
-        }
+        maven { url 'http://dl.bintray.com/populov/maven' }
+		maven { url "https://jitpack.io" }  
     }
 }
